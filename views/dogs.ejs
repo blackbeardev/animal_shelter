@@ -1,0 +1,31 @@
+<% include partials/header %>
+
+    <div class="container team-section">   <!--Container opening div-->
+    
+        <div>
+            <h2>DOGS FOR ADOPTION</h2>
+        </div>
+        <div class="row">
+            <div>
+                <h4>Click on the read more button to find out more about each dog.</h4>
+            </div>
+        </div>
+        <div class="row">
+            
+            
+                <% dogs.forEach(function(dog) { %>
+                <div class="col-md-3">
+                    <h3> <%= dog.name %> </h3>
+                    <img class="img-thumbnail img-responsive" src="<%= dog.img %>">
+                    <div class="adopt-dogs">
+                        <button><a class="btn btn-success btn-lg" href="/adopt/dogs/<%=dog._id %>">Read more</a></button>
+                    </div>
+                </div>
+                    
+                <% }); %>
+            
+            
+        </div>
+    </div>  <!--Container closing div -->
+    
+<% include partials/footer %>

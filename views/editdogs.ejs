@@ -1,0 +1,36 @@
+<% include partials/header %>
+
+
+<div class="container">
+  <h3>Edit <%=dog.name%></h3>
+  <form class="contact-form" action="/adopt/dogs/<%=dog._id%>?_method=PUT" method="POST">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="dog[name]" value="<%=dog.name%>">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputName1">Image</label>
+        <input type="text" class="form-control" id="exampleInputName1" name="dog[img]" value="<%=dog.img%>">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputName1">Gender</label>
+        <input type="text" class="form-control" id="exampleInputName1" name="dog[gender]" value="<%=dog.gender%>">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputName1">Age</label>
+        <input type="text" class="form-control" id="exampleInputName1" name="dog[age]" value="<%=dog.age%>">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputFile">Description</label>
+        <textarea class="form-control" rows="6" name="dog[description]"><%=dog.description%></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputName1">Listed Date</label>
+        <input type="text" class="form-control" id="exampleInputName1" name="dog[listed]" value="<%=dog.listed%>">
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+
+<% include partials/footer %>

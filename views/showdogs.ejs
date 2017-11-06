@@ -1,0 +1,29 @@
+<% include partials/header %>
+
+
+<div class="container">
+    <div class="dog-profiles">
+        <h3> <%= dog.name %></h3>
+        <img class="img-thumbnail img-responsive dog-profile-image" src="<%=dog.img%>">
+        <p><span class="classification">Gender:</span> <%=dog.gender%></p>
+        <p><span class="classification">Age:</span> <%=dog.age%> years old.</p>
+        <p><span class="classification">Description:</span> <%=dog.description%></p>
+        <p><span class="classification">Listing Date:</span> <%=dog.listed%></p>
+        <p><span class="classification">ID:</span> <%=dog._id%></p>
+        <div>
+            <button class="btn btn-info btn-lg"><a href="/adopt/enquire">Enquire about <%=dog.name%></a></button>
+            <button class="btn btn-warning btn-lg"><a href="/adopt/dogs/<%=dog._id%>/edit">Edit</a></button>
+            <form action="/adopt/dogs/<%=dog._id%>?_method=DELETE" method="POST">
+                <button>Delete</button>
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+<div>
+    <button><a href="/adopt/dogs">Back to all dogs</a></button>
+</div>
+
+
+<% include partials/footer %>
