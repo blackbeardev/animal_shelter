@@ -1,7 +1,7 @@
 <% include partials/header %>
 
 <div class="container">
-  <h2>CONTACT US</h2>
+  <h2>APPLY TO VOLUNTEER!</h2>
   <form class="contact-form" action="" method="POST">
       <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
@@ -16,13 +16,21 @@
         <input type="text" class="form-control" id="exampleInputName2" placeholder="Last Name">
       </div>
       <div class="form-group">
+        <label for="physicalAddress">Physical Address</label>
+        <input type="text" class="form-control" id="physicalAddress" placeholder="Physical Address">
+      </div>
+      <div class="form-group">
+        <label for="contactNumber">Contact Number</label>
+        <input type="text" class="form-control" id="contactNumber" placeholder="Contact Number">
+      </div>
+      <div class="form-group">
         <label for="exampleInputFile">Message</label>
-        <textarea class="form-control" rows="6"></textarea>
-        <p class="help-block">What would you like to contact us about?</p>
+        <textarea class="form-control" rows="4"></textarea>
+        <p class="help-block">Tell us why you want to volunteer</p>
       </div>
       <div class="checkbox">
         <label>
-          <input type="checkbox"> Add me to the email list please
+          <input type="checkbox"> Permission to perform background check
         </label>
       </div>
       <button type="submit" class="btn btn-success">Submit</button>

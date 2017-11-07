@@ -41,6 +41,7 @@ var catSchema = new mongoose.Schema({
 
 var Cat = mongoose.model("Cat", catSchema);
 
+
 //Other animals set up
 
 var otherSchema = new mongoose.Schema({
@@ -91,6 +92,10 @@ app.get("/volunteer", function(req, res) {
 
 app.get("/adopt/enquire", function(req, res) {
    res.render("enquire"); 
+});
+
+app.get("/application", function(req, res) {
+    res.render("application");
 });
 
 // The dogs routes
@@ -180,7 +185,7 @@ app.post("/adopt/cats", function(req, res) {
         if(err) {
             console.log(err);
         } else {
-            res.redirect("/adopt");
+            res.redirect("/adopt/cats");
         }
     });
 });

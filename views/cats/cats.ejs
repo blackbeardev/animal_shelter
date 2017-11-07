@@ -16,15 +16,18 @@
                 <% cats.forEach(function(cat) { %>
                 <div class="col-md-3">
                     <h3> <%= cat.name %> </h3>
-                    <img class="img-thumbnail img-responsive" src="<%= cat.img %>">
+                    <img class="img-thumbnail img-responsive" src="<%=cat.img%>">
                     <div class="adopt-dogs">
-                        <button><a class="btn btn-success btn-lg" href="/adopt/cats/<%=cat._id %>">Read more</a></button>
+                        
+                        <button class="btn btn-warning btn-lg"><a href="/adopt/cats/<%=cat.id%>">READ MORE</a></button>
                     </div>
                 </div>
                     
                 <% }); %>
-            
-            <button><a href="/adopt/cats/new">Add a new cat</a></button>
+        </div>
+        
+        <div class="newCat">
+            <button class="btn btn-primary btn-med"><a href="/adopt/cats/new">Add a new cat</a></button>
         </div>
     </div>  <!--Container closing div -->
 

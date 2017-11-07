@@ -6,6 +6,10 @@ a {
     color: #fff;
 }
 
+a:hover {
+    color: #fff;
+}
+
 .arrow-up {
     position: fixed;
     right: 5%;
@@ -18,9 +22,6 @@ a {
     opacity: 0.8;
 }
 
-
- 
-  
  
 .back-to-top i {
  
@@ -224,6 +225,7 @@ footer span {
     }
     
     
+    
 /*--------------------------------------------------------------------------------*/
 
 /*Dogs/Individual Page*/  
@@ -245,12 +247,28 @@ footer span {
         font-weight: bold;
         font-size: 1.3em;
     }
+    
+    .delete-animal {
+        margin-top: 1em;
+    }
+    
+    .newCat {
+        margin-top: 3em;
+    }
 
 /*--------------------------------------------------------------------------------*/
 
 /*Volunteer Page*/ 
 
 /*--------------------------------------------------------------------------------*/
+
+.faq-accordion {
+    margin: 2em 0;
+}
+
+.faq-accordion h2 {
+    margin-bottom: 1em;
+}
 
 .vol-req {
     margin-top: 2em;
@@ -263,7 +281,8 @@ footer span {
 
 .vol-req i {
     margin-right: 1em;
-    font-size: 2rem;
+    font-size: 3rem;
+    color: #FF7A0D;
 }
 
 /*Media Queries - max-width 768px*/
