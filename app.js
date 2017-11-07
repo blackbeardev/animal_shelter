@@ -15,6 +15,8 @@ app.use(methodOverride("_method"));
 var mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/animals");
 
+// Dog set up
+
 var dogSchema = new mongoose.Schema({
     name: String,
     img: String,
@@ -25,6 +27,8 @@ var dogSchema = new mongoose.Schema({
 });
 
 var Dog = mongoose.model("Dog", dogSchema);
+
+// Cat set up
 
 var catSchema = new mongoose.Schema({
     name: String,
@@ -37,35 +41,19 @@ var catSchema = new mongoose.Schema({
 
 var Cat = mongoose.model("Cat", catSchema);
 
-// Cat.create({
-//     name: "Florence",
-//     img: "https://i.ytimg.com/vi/pHQvp7BFokc/hqdefault.jpg",
-//     gender: "Female",
-//     age: 4,
-//     description: "Florence is a very pretty cat, with a great sense of style.  Whether you want cuddles all day or a companion that you can discuss fashion with, Florence is the cat for you.",
-//     listed: "4 May 2017"
-// }, function(err, newCat) {
-//     if(err) {
-//         console.log(err);
-//     } else {
-//         console.log("A new cat was saved.");
-//     }
-// });
+//Other animals set up
 
-// Dog.create({
-//     name: "Katy",
-//     img: "https://www.what-dog.net/Images/faces2/scroll001.jpg",
-//     gender: "Female",
-//     age: 1,
-//     description: "This is Katy, she is a very boistrous, big dog.",
-//     listed: "5 May 2017"
-// }, function(err, newlyCreated) {
-//     if(err) {
-//         console.log(err);
-//     } else {
-//         console.log("A new dog was saved!");
-//     }
-// });
+var otherSchema = new mongoose.Schema({
+    name: String,
+    species: String,
+    img: String,
+    gender: String,
+    age: Number,
+    description: String,
+    listed: String
+});
+
+var Other = mongoose.model("Other", otherSchema);
 
 
 // ROUTES
@@ -102,7 +90,7 @@ app.get("/adopt/dogs", function(req, res) {
         if(err) {
             console.log(err);
         } else {
-            res.render("dogs", {dogs: allDogs});
+            res.render("dogs/dogs", {dogs: allDogs});
         }
     });
 });
@@ -120,7 +108,7 @@ app.post("/adopt/dogs", function(req, res) {
 });
 
 app.get("/adopt/dogs/new", function(req, res) {
-    res.render("new");
+    res.render("dogs/new");
 });
 
 app.get("/adopt/dogs/:id", function(req, res) {
@@ -128,7 +116,7 @@ app.get("/adopt/dogs/:id", function(req, res) {
        if(err) {
            console.log(err);
        } else {
-           res.render("showdogs", {dog: foundDog});
+           res.render("dogs/showdogs", {dog: foundDog});
        }
    });
 });
@@ -138,7 +126,7 @@ app.get("/adopt/dogs/:id/edit", function(req, res) {
         if(err) {
             console.log(err);
         } else {
-            res.render("editdogs", {dog: foundDog});
+            res.render("dogs/editdogs", {dog: foundDog});
         }
     });
 });
@@ -163,7 +151,145 @@ app.delete("/adopt/dogs/:id", function(req, res) {
     });
 });
 
+// Cat routes
 
+app.get("/adopt/cats", function(req, res) {
+    Cat.find({}, function(err, allCats) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.render("cats/cats", {cats: allCats});
+        }
+    });
+});
+
+app.post("/adopt/cats", function(req, res) {
+    var newCat = req.body.cat;
+    
+    Cat.create(newCat, function(err, newlyCreated) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.redirect("/adopt");
+        }
+    });
+});
+
+app.get("/adopt/cats/new", function(req, res) {
+    res.render("cats/new");
+});
+
+app.get("/adopt/cats/:id", function(req, res) {
+   Cat.findById(req.params.id, function(err, foundCat) {
+       if(err) {
+           console.log(err);
+       } else {
+           res.render("cats/showcats", {cat: foundCat});
+       }
+   });
+});
+
+app.get("/adopt/cats/:id/edit", function(req, res) {
+    Cat.findById(req.params.id, function(err, foundCat) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.render("cats/editcats", {cat: foundCat});
+        }
+    });
+});
+
+app.put("/adopt/cats/:id", function(req, res) {
+    Cat.findByIdAndUpdate(req.params.id, req.body.cat, function(err, updatedCat) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.redirect("/adopt/cats/" + req.params.id);
+        }
+    });
+});
+
+app.delete("/adopt/cats/:id", function(req, res) {
+    Cat.findByIdAndRemove(req.params.id, function(err) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.redirect("/adopt/cats");
+        }
+    });
+});
+
+
+// Other animals routes
+
+app.get("/adopt/others", function(req, res) {
+    Other.find({}, function(err, allOthers) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.render("others/others", {others: allOthers});
+        }
+    });
+});
+
+app.post("/adopt/others", function(req, res) {
+    var newOther = req.body.other;
+    
+    Other.create(newOther, function(err, newlyCreated) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.redirect("/adopt");
+        }
+    });
+});
+
+app.get("/adopt/others/new", function(req, res) {
+    res.render("others/new");
+});
+
+app.get("/adopt/others/:id", function(req, res) {
+  Other.findById(req.params.id, function(err, foundOther) {
+      if(err) {
+          console.log(err);
+      } else {
+          res.render("others/showothers", {other: foundOther});
+      }
+  });
+});
+
+app.get("/adopt/others/:id/edit", function(req, res) {
+    Other.findById(req.params.id, function(err, foundOther) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.render("others/editothers", {other: foundOther});
+        }
+    });
+});
+
+app.put("/adopt/others/:id", function(req, res) {
+    Other.findByIdAndUpdate(req.params.id, req.body.other, function(err, updatedOther) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.redirect("/adopt/others/" + req.params.id);
+        }
+    });
+});
+
+app.delete("/adopt/others/:id", function(req, res) {
+    Other.findByIdAndRemove(req.params.id, function(err) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.redirect("/adopt/others");
+        }
+    });
+});
+
+
+// Enquire routes
 
 app.get("/adopt/enquire", function(req, res) {
    res.render("enquire"); 
