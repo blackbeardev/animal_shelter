@@ -244,6 +244,24 @@ footer span {
 
 /*--------------------------------------------------------------------------------*/
 
+/*Volunteer Page*/ 
+
+/*--------------------------------------------------------------------------------*/
+
+.vol-req {
+    margin-top: 2em;
+}
+
+.vol-req li {
+    list-style: none;
+    margin-bottom: 1em;
+}
+
+.vol-req i {
+    margin-right: 1em;
+    font-size: 2rem;
+}
+
 /*Media Queries - max-width 768px*/
 
 @media screen and (max-width: 768px) {

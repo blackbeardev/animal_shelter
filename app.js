@@ -83,6 +83,16 @@ app.get("/adopt", function(req, res) {
     res.render("adopt");
 });
 
+
+app.get("/volunteer", function(req, res) {
+    res.render("volunteer");
+});
+
+
+app.get("/adopt/enquire", function(req, res) {
+   res.render("enquire"); 
+});
+
 // The dogs routes
 
 app.get("/adopt/dogs", function(req, res) {
@@ -291,9 +301,7 @@ app.delete("/adopt/others/:id", function(req, res) {
 
 // Enquire routes
 
-app.get("/adopt/enquire", function(req, res) {
-   res.render("enquire"); 
-});
+
 
 
 app.listen(process.env.PORT, process.env.IP, function() {
