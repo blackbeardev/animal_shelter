@@ -107,6 +107,7 @@ footer {
     background: #000;
     color: #fff;
     padding: 2em 2em 2em 6em;
+    font-size: 1.7rem;
 }
 
 .footer-flex {
@@ -326,6 +327,10 @@ footer span {
   
   .emergency h2 {
       font-size: 1.2em;
+  }
+  
+  footer {
+      font-size: 1.2rem; 
   }
   
   .footer-flex {

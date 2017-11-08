@@ -19,13 +19,14 @@
                     <h4><%=other.species%></h4>
                     <img class="img-thumbnail img-responsive" src="<%= other.img %>">
                     <div class="adopt-dogs">
-                        <button><a class="btn btn-success btn-lg" href="/adopt/others/<%=other._id %>">Read more</a></button>
+                        <button class="btn btn-warning btn-lg"><a href="/adopt/others/<%=other._id %>">Read more</a></button>
                     </div>
                 </div>
                     
                 <% }); %>
-            
-            <button><a href="/adopt/others/new">Add a new animal</a></button>
+        </div>
+        <div class="newCat">
+            <button class="btn btn-primary btn-med"><a href="/adopt/others/new">Add a new animal</a></button>
         </div>
     </div>  <!--Container closing div -->
     

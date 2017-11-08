@@ -18,13 +18,14 @@
                     <h3> <%= dog.name %> </h3>
                     <img class="img-thumbnail img-responsive" src="<%= dog.img %>">
                     <div class="adopt-dogs">
-                        <button><a class="btn btn-success btn-lg" href="/adopt/dogs/<%=dog._id %>">Read more</a></button>
+                        <button class="btn btn-warning btn-lg"><a  href="/adopt/dogs/<%=dog._id %>">Read more</a></button>
                     </div>
                 </div>
                     
                 <% }); %>
-            
-            <button><a href="/adopt/dogs/new">Add a new dog</a></button>
+        </div>
+        <div class="newCat">
+            <button class="btn btn-primary btn-med"><a href="/adopt/dogs/new">Add a new dog</a></button>
         </div>
     </div>  <!--Container closing div -->
     
