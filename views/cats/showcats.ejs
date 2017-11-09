@@ -4,13 +4,13 @@
 <div class="container">
     <div class="dog-profiles">
         <h3> <%= cat.name %></h3>
-        <img class="img-thumbnail img-responsive dog-profile-image" src="<%=cat.img%>">
+        <img class="img-thumbnail img-responsive dog-profile-image" src="<%=cat.img%>" height="400" width="400">
         <p><span class="classification">Gender:</span> <%=cat.gender%></p>
         <p><span class="classification">Age:</span> <%=cat.age%> years old.</p>
         <p><span class="classification">Description:</span> <%=cat.description%></p>
         <p><span class="classification">Listing Date:</span> <%=cat.listed%></p>
         <p><span class="classification">ID:</span> <%=cat._id%></p>
-        <div>
+        <div class="animal-actions">
             <button class="btn btn-info btn-lg"><a href="/adopt/enquire">Enquire</a></button>
             <button class="btn btn-warning btn-lg"><a href="/adopt/cats/<%=cat._id%>/edit">Edit <%=cat.name%></a></button>
             <div class="delete-animal">  
@@ -18,8 +18,6 @@
                     <button class="btn btn-danger btn-lg">Delete</button>
                 </form>
             </div>
-
-            
         </div>
     </div>
 </div>

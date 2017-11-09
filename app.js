@@ -21,7 +21,7 @@ var dogSchema = new mongoose.Schema({
     name: String,
     img: String,
     gender: String,
-    age: Number,
+    age: String,
     description: String,
     listed: String
 });
@@ -34,7 +34,7 @@ var catSchema = new mongoose.Schema({
     name: String,
     img: String,
     gender: String,
-    age: Number,
+    age: String,
     description: String,
     listed: String
 });
@@ -49,7 +49,7 @@ var otherSchema = new mongoose.Schema({
     species: String,
     img: String,
     gender: String,
-    age: Number,
+    age: String,
     description: String,
     listed: String
 });
@@ -117,7 +117,7 @@ app.post("/adopt/dogs", function(req, res) {
         if(err) {
             console.log(err);
         } else {
-            res.redirect("/adopt");
+            res.redirect("/adopt/dogs");
         }
     });
 });
@@ -254,7 +254,7 @@ app.post("/adopt/others", function(req, res) {
         if(err) {
             console.log(err);
         } else {
-            res.redirect("/adopt");
+            res.redirect("/adopt/others");
         }
     });
 });

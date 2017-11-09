@@ -199,9 +199,9 @@ footer span {
         text-align: center;
     }
     
-    .team-hidden-content {
-        display: none;
-    }
+    /*.team-hidden-content {*/
+    /*    display: none;*/
+    /*}*/
     
     .team-show-content {
         margin: 1.5em 0;
@@ -239,8 +239,6 @@ footer span {
     }
 
     .dog-profile-image {
-        width: 300px;
-        height: 300px;
         margin: 1em auto;
     }
     
@@ -262,6 +260,12 @@ footer span {
 /*Volunteer Page*/ 
 
 /*--------------------------------------------------------------------------------*/
+
+.volunteer-info {
+    /*border: 1px solid red;*/
+    text-align: left;
+}
+
 
 .faq-accordion {
     margin: 2em 0;
@@ -372,6 +376,24 @@ footer span {
         margin-bottom: 2em;
         width: 100%;
         text-align: center;
+    }
+    
+ /*--------------------------------------------------------------------------------*/
+
+/*Adopt Page*/   
+    
+    .animal-actions button {
+        margin: 0.4em 0;
+    }
+    
+    
+    /*Volunteer Page*/ 
+
+/*--------------------------------------------------------------------------------*/
+
+    .volunteer-info {
+        width: 90%;
+        margin: 0 auto;
     }
 }
 
