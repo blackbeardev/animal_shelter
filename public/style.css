@@ -10,6 +10,12 @@ a:hover {
     color: #FF7A0D;
 }
 
+.custom-btn {
+    color: #fff;
+    background-color:#034E95;
+    border-color: #034E95;
+}
+
 .arrow-up {
     position: fixed;
     right: 5%;
@@ -22,11 +28,24 @@ a:hover {
     opacity: 0.8;
 }
 
+#back-to-top {
+    background-color: #fff;
+    border-color: #fff;
+}
+
  
 .back-to-top i {
  
   font-size: 60px;
  
+}
+
+#nav-logo img {
+    height: 80px;
+}
+
+#nav-right {
+    padding: 15px 0;
 }
 
 .heroImage {
@@ -98,7 +117,7 @@ a:hover {
 }
 
 .emergency {
-    background: red;
+    background: #F7941e;
     text-align: center;
     padding: 1em 0;
     color: #fff;
@@ -106,8 +125,10 @@ a:hover {
 
 
 
+
+
 footer {
-    background: #000;
+    background: #414042;
     color: #fff;
     padding: 2em 2em 2em 6em;
     font-size: 1.7rem;
