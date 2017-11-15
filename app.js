@@ -13,8 +13,8 @@ app.use(methodOverride("_method"));
 
 // MONGOOSE SET UP
 var mongoose = require("mongoose");
-// mongoose.connect("mongodb://localhost/animals");
-mongoose.connect("mongodb://flyingfox:frauke2015@ds257485.mlab.com:57485/ff-adopt-a-pet");
+mongoose.connect("mongodb://localhost/animals");
+// mongoose.connect("mongodb://flyingfox:frauke2015@ds257485.mlab.com:57485/ff-adopt-a-pet");
 
 // Dog set up
 
