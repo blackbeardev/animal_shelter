@@ -4,15 +4,15 @@
 <div class="container">
     <div class="dog-profiles">
         <h3> <%= dog.name %></h3>
-        <img class="img-thumbnail img-responsive dog-profile-image" src="<%=dog.img%>" height="400" width="400">
+        <img class="img-thumbnail img-responsive dog-profile-image" src="<%=dog.img%>" height="400" width="40">
         <p><span class="classification">Gender:</span> <%=dog.gender%></p>
         <p><span class="classification">Age:</span> <%=dog.age%></p>
         <p><span class="classification">Description:</span> <%=dog.description%></p>
         <p><span class="classification">Listing Date:</span> <%=dog.listed%></p>
         <p><span class="classification">ID:</span> <%=dog._id%></p>
         <div>
-            <button class="btn btn-info btn-lg"><a href="/adopt/enquire">Enquire</a></button>
-            <button class="btn btn-warning btn-lg"><a href="/adopt/dogs/<%=dog._id%>/edit">Edit <%=dog.name%></a></button>
+            <a class="btn btn-info btn-lg enquire-btn" href="/adopt/enquire">Enquire</a>
+            <a class="btn btn-warning btn-lg edit-btn" href="/adopt/dogs/<%=dog._id%>/edit">Edit <%=dog.name%></a>
             <div class="delete-animal">
                 <form action="/adopt/dogs/<%=dog._id%>?_method=DELETE" method="POST">
                     <button class="btn btn-danger btn-lg">Delete</button>
@@ -25,7 +25,7 @@
 </div>
 
 <div class="newCat">
-    <button class="btn btn-primary btn-med"><a href="/adopt/dogs">Back to all dogs</a></button>
+    <a class="btn btn-primary btn-med" href="/adopt/dogs">Back to all dogs</a>
 </div>
 
 

@@ -59,7 +59,7 @@ a:hover {
 }
 
 .heroImage {
-    height: 60vh;  
+    height: 100%;  
     background-size: cover;
     background-position: top;
     background-image: url("/images/pet-bg.jpg");
@@ -76,6 +76,8 @@ a:hover {
     margin-bottom: 0.5em;
 }
 
+
+
 .caring {
     text-align: center;
     width: 60%;
@@ -83,9 +85,8 @@ a:hover {
     line-height: 1.6;
 }
 
-#caring__para {
+.caring p {
     margin: 2em 0;
-    color: #000;
 }
 
 .caring button {
@@ -125,6 +126,10 @@ a:hover {
 .section-opaque,
 .section-blurb {
     text-align: center;
+}
+
+.section-blurb {
+    margin-top: .7em;
 }
 
 .emergency {
@@ -210,9 +215,9 @@ footer span {
     height: 300px;
 }
 
-.team img {
-    height: 250px;
-}
+/*.team img {*/
+/*    height: 250px;*/
+/*}*/
 
 /*--------------------------------------------------------------------------------*/
 
@@ -256,9 +261,11 @@ footer span {
 
 /*Adopt Page*/    
 
-    .adopt-dogs button {
+    .adopt-dogs button,
+    .adopt-dogs a{
         margin: 1em 0;
     }
+    
     
     
     
@@ -275,6 +282,7 @@ footer span {
 
     .dog-profile-image {
         margin: 1em auto;
+        width: 50%;
     }
     
     .classification {
@@ -289,6 +297,8 @@ footer span {
     .newCat {
         margin-top: 3em;
     }
+    
+   
 
 /*--------------------------------------------------------------------------------*/
 
@@ -334,6 +344,11 @@ footer span {
     color: #fff;
   }
   
+  .jumbotron p {
+      max-width: 55%;
+      font-weight: 350;
+  }
+  
   .caring {
     text-align: center;
     width: 100%;
@@ -357,7 +372,9 @@ footer span {
       font-size: 0.98em;
   }
   
-
+   .volunteer-sec {
+       margin-top: 1em;
+   }    
   
   .emergency {
       padding-right: 2em;
@@ -393,7 +410,13 @@ footer span {
     }
     
 
+    .enquire-btn {
+        margin-bottom: 1.2em;
+    }
     
+    .edit-btn {
+        margin-bottom: .2em;
+    }
     
     /*Contact Page*/
 

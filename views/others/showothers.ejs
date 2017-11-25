@@ -12,8 +12,8 @@
         <p><span class="classification">Listing Date:</span> <%=other.listed%></p>
         <p><span class="classification">ID:</span> <%=other._id%></p>
         <div>
-            <button class="btn btn-info btn-lg"><a href="/adopt/enquire">Enquire</a></button>
-            <button class="btn btn-warning btn-lg"><a href="/adopt/others/<%=other._id%>/edit">Edit <%=other.name%></a></button>
+            <a class="btn btn-info btn-lg enquire-btn" href="/adopt/enquire">Enquire</a>
+            <a class="btn btn-warning btn-lg edit-btn" href="/adopt/others/<%=other._id%>/edit">Edit <%=other.name%></a>
             <div class="delete-animal">
                 <form action="/adopt/others/<%=other._id%>?_method=DELETE" method="POST">
                     <button class="btn btn-danger btn-lg">Delete</button>
@@ -26,7 +26,7 @@
 </div>
 
 <div class="newCat">
-    <button class="btn btn-primary btn-med"><a href="/adopt/others">Back to all other animals</a></button>
+    <a class="btn btn-primary btn-med" href="/adopt/others">Back to all other animals</a>
 </div>
 
 
