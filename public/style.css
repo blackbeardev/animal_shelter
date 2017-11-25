@@ -62,7 +62,7 @@ a:hover {
     height: 60vh;  
     background-size: cover;
     background-position: top;
-    background-image: url("http://www.naim.org.il/wp-content/uploads/2015/08/good-furtune-yoga.jpg");
+    background-image: url("/images/pet-bg.jpg");
     color: #fff;
 }
 
@@ -83,8 +83,9 @@ a:hover {
     line-height: 1.6;
 }
 
-.caring p {
+#caring__para {
     margin: 2em 0;
+    color: #000;
 }
 
 .caring button {
